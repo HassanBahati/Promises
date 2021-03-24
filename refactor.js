@@ -47,10 +47,14 @@ loginUser('percy', 'gary')
 
 //sync
 async function displayUser(){
+    try{
     const loggedUser = await loginUser('ed', 13485);
     const videos = await getUserVideo(loggedUser.userEmail);
     const detail = await videoDetails(videos[0]);
     console.log(details)
+    }catch(err){
+         console.log('We could not get the videos')
+    }
 }
 
 // console.log('Finish')
