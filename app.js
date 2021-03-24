@@ -24,7 +24,7 @@ const user = loginUser('devs@mail.com', 123456, user => {
     console.log(user);
     getUserVideo(user.userEmail, videos => {
         console.log(videos);
-        videoDetails(video[0], title => {
+        videoDetails(videos[0], title => {
             console.log(title)
         })
     })
