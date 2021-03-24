@@ -37,17 +37,20 @@ function videoDetails(video){
 //     })
 // });
 
-// loginUser('percy', 'gary')
-// .then(user=> getUserVideo(user.email))
-// .then(videos=> videoDetails(videos[0]))
-// .then(detail=> console.log(detail))
+loginUser('percy', 'gary')
+.then(user=> getUserVideo(user.email))
+.then(videos=> videoDetails(videos[0]))
+.then(detail=> console.log(detail))
 
-
-// const user = loginUser('percy', 'gary')
-// const videos = videoDetails(user.email)
 
 // console.log(user);
 
 //sync
+async function displayUser(){
+    const loggedUser = await loginUser('ed', 13485);
+    const videos = await getUserVideo(loggedUser.userEmail);
+    const detail = await videoDetails(videos[0]);
+    console.log(details)
+}
 
 // console.log('Finish')
